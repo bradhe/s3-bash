@@ -155,8 +155,8 @@ function checkAwsKey
 {
 	local originalKeyFile="$1"
 	local keySize="$(ls -l "$originalKeyFile" | awk '{ print $5 }')"
-	if [ ! $keySize -eq 40 ]; then
-		printErrorHelpAndExit "We do not understand Amazon AWS secret keys which are not 40 bytes long. Have you included a carriage return or line feed by mistake at the end of the secret key file?" $userSpecifiedDataErrorExitCode
+	if [ ! $keySize -eq 41 ]; then
+		printErrorHelpAndExit "We do not understand Amazon AWS secret keys which are not 41 bytes long. Have you included a carriage return or line feed by mistake at the end of the secret key file?" $userSpecifiedDataErrorExitCode
 	fi
 }
 
